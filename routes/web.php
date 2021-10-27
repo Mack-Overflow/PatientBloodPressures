@@ -14,8 +14,9 @@ use App\Http\Controllers\PatientController;
 |
 */
 
-Route::get('/patients/index', [PatientController::class, 'index'])->name('patients.index');
+Route::get('patients/index', [PatientController::class, 'index'])->name('patients.index');
 Route::get('patients/export', [PatientController::class, 'export'])->name('patients.export');
+Route::get('patients/create', [PatientController::class, 'create'])->name('patients.create');
 Route::view('/', 'welcome')->name('home');
 // For once authentication is implemented
 

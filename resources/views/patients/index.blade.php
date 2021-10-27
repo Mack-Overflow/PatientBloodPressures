@@ -1,13 +1,17 @@
 @extends('layouts.app')
 @section('content')
-<div class="flex flex-col w-3/4 mx-auto">
-    <div class="grid grid-cols-12">
-        <div class="col-span-10">
+<x-navbar />
+<div class="flex flex-col w-4/5 mx-auto my-3">
+    <div class="grid grid-cols-1">
+        <a class="flex mx-auto my-auto p-2 border-2 rounded-lg border-green-500 float-right text-green-500 hover:bg-green-500 hover:text-white"
+            href={{ route('patients.export') }}> Export Patients as
+            CSV</a>
+        <a class="flex mx-auto my-auto p-2 border-2 rounded-lg border-green-500 float-right text-green-500 hover:bg-green-500 hover:text-white"
+            href={{ route('patients.create') }}> Export Patients as
+            CSV</a>
+        <div class="">
             <livewire:patient-table searchable="name, id" />
         </div>
-        <a class="flex mx-auto my-auto px-auto col-span-2 border-2 border-green-400" href={{ route('patients.export')
-            }}> Export as
-            CSV</a>
     </div>
 </div>
 @endsection
