@@ -14,14 +14,21 @@ class PatientsExport implements FromCollection
      */
     public function collection()
     {
-        return Patient::select(
-            Record::select('pressure')->whereColumn('patent_id', 'patients.id')
-                ->orderByDesc('recorded_at')
-        )->get();
+        return Patient::select('patients.id', 'patients.fname', 'patients.lname', 'records.pressure', 'records.recorded_at')
+            ->leftJoin('records', 'records.patient_id', 'patients.id')->get();
     }
 
-    public function headings()
+    /**
+     * @return array
+     */
+    public function headings(): array
     {
-        //
+        return [
+            'Patient Id #',
+            'First Name',
+            'Last Name',
+            'Blood Pressure',
+            'Recorded Date'
+        ];
     }
 }

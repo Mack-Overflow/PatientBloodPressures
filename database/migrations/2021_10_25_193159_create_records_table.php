@@ -19,7 +19,7 @@ class CreateRecordsTable extends Migration
         Schema::create('records', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('patient_id')->unsigned();
-            $table->foreign('patient_id')->references('id')->on('patients');
+            $table->foreign('patient_id', 'fk_patient_id')->references('id')->on('patients')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->integer('pressure');
             $table->timestamp('recorded_at')->nullable();
         });
@@ -32,6 +32,9 @@ class CreateRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('records');
+        Schema::table('records', function (Blueprint $table) {
+            $table->dropForeign('fk_patient_id');
+            $table->dropColumn('patient_id');
+        });
     }
 }

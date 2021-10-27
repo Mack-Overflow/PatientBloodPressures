@@ -7,10 +7,16 @@ use Illuminate\Http\Request;
 use App\Exports\PatientsExport;
 use App\Http\Livewire\PatientTable;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class PatientController extends Controller
 {
+    public function login()
+    {
+        return redirect::to('patients/index');
+    }
+
     public function index()
     {
         // $patients = Patient::all();

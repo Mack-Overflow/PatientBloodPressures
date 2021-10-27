@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Livewire\Auth\Login;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RecordController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\Auth\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +18,18 @@ use App\Http\Controllers\PatientController;
 |
 */
 
+Route::view('/login', 'livewire/auth/login')->name('login');
+Route::view('/register', 'livewire/auth/register')->name('register');
+Route::post('/logMeIn', [PatientController::class, 'login'])->name('logMeIn');
+
+Route::view('/', 'welcome')->name('home');
 Route::get('patients/index', [PatientController::class, 'index'])->name('patients.index');
 Route::get('patients/export', [PatientController::class, 'export'])->name('patients.export');
-Route::get('patients/create', [PatientController::class, 'create'])->name('patients.create');
-Route::view('/', 'welcome')->name('home');
-// For once authentication is implemented
+Route::view('patients/record', 'patients/pressureForm')->name('patients.record');
+Route::post('postRecord', [RecordController::class, 'create'])->name('records.create');
 
 // Route::middleware('auth')->group(function () {
+//     Route::view('/', 'welcome')->name('home');
 //     Route::get('/patients/index', [PatientController::class, 'index'])->name('patients.index');
 //     Route::get('patients/export', 'PatientController@export');
 // });

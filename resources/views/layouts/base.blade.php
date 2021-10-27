@@ -8,7 +8,7 @@
 
     <title>@yield('title') - {{ config('app.name') }}</title>
     @else
-    <title>{{ config('app.name') }}</title>
+    <title>{{ config('Blood Pressure') }}</title>
     @endif
 
     <!-- Favicon -->

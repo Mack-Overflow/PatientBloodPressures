@@ -35,7 +35,10 @@ class PatientTable extends LivewireDatatable
                 ->label('Last Name'),
 
             NumberColumn::name('records.pressure')
-                ->label('Blood Pressure')
+                ->label('Blood Pressure'),
+
+            DateColumn::name('records.recorded_at')
+                ->label('Last Recorded Date')
         ];
     }
 

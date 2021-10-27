@@ -35,26 +35,20 @@
                 <x-logo class="w-auto h-16 mx-auto text-indigo-600" />
             </a>
 
-            <h1 class="text-5xl font-extrabold tracking-wider text-center text-gray-600">
-                {{ config('app.name') }}
+            <h1 class="text-5xl font-extrabold text-center text-gray-600">
+                Blood Pressure Recorder
             </h1>
 
-            <ul class="list-reset">
-                <li class="inline px-4">
+            <ul class="flex mx-auto">
+                <li class="flex-inline mx-auto px-4">
                     <a href="{{ route('patients.index') }}"
-                        class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Patients</a>
+                        class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">View
+                        Patient Records</a>
                 </li>
-                <li class="inline px-4">
-                    <a href="https://github.com/alpinejs/alpine"
-                        class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Alpine.js</a>
-                </li>
-                <li class="inline px-4">
-                    <a href="https://laravel.com"
-                        class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Laravel</a>
-                </li>
-                <li class="inline px-4">
-                    <a href="https://laravel-livewire.com"
-                        class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Livewire</a>
+                <li class="flex-inline mx-auto px-4">
+                    <a href="{{ route('patients.record') }}"
+                        class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                        Enter Blood Pressure Record</a>
                 </li>
             </ul>
         </div>
