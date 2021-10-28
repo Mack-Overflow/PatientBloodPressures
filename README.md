@@ -1,5 +1,13 @@
-# composer require mediconesystems/livewire-datatables
-
+<p>
+Run the following commands after installation:
+"npm install && npm run dev"
+"composer install"
+"php artisan key:generate"
+"cp .env.example .env"
+</br>
+Create a database, and specify it inside of '.env' on line 14
+After having pointed the application at a database, run "php artisan migrate"
+</p>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
