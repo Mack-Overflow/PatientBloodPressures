@@ -20,6 +20,7 @@ class CreateRecordsTable extends Migration
             $table->increments('id');
             $table->integer('patient_id')->unsigned();
             $table->foreign('patient_id', 'fk_patient_id')->references('id')->on('patients')->onUpdate('CASCADE')->onDelete('CASCADE');
+            // can also implement $table->foreignId('patient_id')->constrained('patients'); instead of two above lines
             $table->integer('pressure');
             $table->timestamp('recorded_at')->nullable();
         });
